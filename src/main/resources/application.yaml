@@ -1,0 +1,13 @@
+server:
+ port: 8081
+
+spring:
+ application:
+  name: practice
+ datasource:
+  url: jdbc:postgresql://ep-fragrant-limit-376687-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb
+  username: default
+  password: ya02ZdpYkFuN
+  driverClassName: org.postgresql.Driver
+
+   
