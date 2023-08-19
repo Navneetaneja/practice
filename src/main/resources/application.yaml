@@ -5,9 +5,11 @@ spring:
  application:
   name: practice
  datasource:
-  url: jdbc:postgresql://ep-fragrant-limit-376687-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb
-  username: default
-  password: ya02ZdpYkFuN
-  driverClassName: org.postgresql.Driver
-
-   
+  url: jdbc:postgresql://localhost:1331/postgres
+  username: postgres
+  password: navneet
+  driverClassName: org.postgresql.Driver 
+ security:
+  user:
+   name: user
+   password: pass 

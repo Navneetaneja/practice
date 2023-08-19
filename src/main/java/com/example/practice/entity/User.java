@@ -6,8 +6,6 @@ import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +25,6 @@ import lombok.Setter;
 public class User {
     @Id
     @GeneratedValue
-    @JsonIgnore
     @Column(name = "id", nullable = false)
     private UUID id;
 
@@ -37,11 +34,9 @@ public class User {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @JsonIgnore
     @Column(name = "mobile_no")
     private String mobileNo;
 
-    @JsonIgnore
     @Column(name = "password", nullable = false)
     private String password;
 

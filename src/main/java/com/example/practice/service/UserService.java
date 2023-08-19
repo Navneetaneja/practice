@@ -1,6 +1,6 @@
 package com.example.practice.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,19 @@ import lombok.AllArgsConstructor;
 public class UserService {
     private final UserRepository userRepository;
 
-    public void saveUser(User user) {
-        userRepository.save(user);
+    public boolean saveUser(User user) {
+        if(null != user.getEmail()){
+            if(userRepository.existsByEmail(user.getEmail())){
+                return false;
+            }
+            userRepository.save(user);
+            return true;
+        }
+        return false;
     }
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public Optional<User> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
     
 }
